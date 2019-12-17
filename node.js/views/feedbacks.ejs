@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <div class="main-container">
+        <div class="left">
+            <form method="POST">
+                <input type="text" name="name" placeholder="Vardas" required>
+                <input type="email" name="email" placeholder="El. paštas" required>
+                <input type="hidden" name="date" id="todayDate" >
+                <input type="hidden" name="color" id="comentColor" >
+                <textarea name="feedback" id="" cols="30" rows="8" placeholder="Jūsų komentaras" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="right">
+            <div class="scrool-container">
+                <% data.slice().reverse().map((item) => { %>
+                    <div class="feedbacks <%= item.color %>">
+                        <h3><span>Vardas:</span> <%= item.name %>&nbsp; <span>data:</span> <%= item.date %></h3>
+                        <p><span>El. pastas:</span> <%= item.email %></p>
+                        <p><%= item.feedback %></p>
+                    </div> 
+                <% }); %>
+            </div>
+        </div>
+
+
+    </div>
+
+<script src="main.js" type="text/javascript">
+
+    </script>
+</body>
+</html>
